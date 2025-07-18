@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Image Showcase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .background-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(40, 40, 40, 0.3) 0px, transparent 2%),
+                radial-gradient(circle at 90% 80%, rgba(30, 30, 30, 0.3) 0px, transparent 2%);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 900px;
+            text-align: center;
+            padding: 2rem;
+            z-index: 1;
+        }
+        
+        .header {
+            margin-bottom: 2.5rem;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(255, 126, 95, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .image-container {
+            position: relative;
+            margin: 2rem auto;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 50px #f9ec32;
+            border: 5px solid #333;
+            transition: all 0.5s ease;
+        }
+        
+        .image-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 70px #f9ec32;
+            border-color: #ff7e5f;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+        
+        .content {
+            background: rgba(30, 30, 30, 0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid #333;
+            max-width: 700px;
+            margin: 2rem auto;
+        }
+        
+        .content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #ddd;
+        }
+        
+        .highlight {
+            color: #f9ec32;
+            font-weight: bold;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #222;
+            color: #f9ec32;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+        }
+        
+        .social-icons a:hover {
+            background: #f9ec32;
+            color: #000;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
+        }
+        
+        .footer {
+            margin-top: 3rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .image-container {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .image-container {
+                width: 200px;
+                height: 200px;
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: #f9ec32;
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(255, 126, 95, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 126, 95, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-pattern"></div>
+    
+    <div class="container">
+      
+        
+        <div class="image-container pulse">
+            <img src="img/Screenshot 2025-07-18 172851.png" alt="Central Image">
+        </div>
+        
+        <div class="content">
+            <p>Más rápido que un bug en producción</p>
+            
+        
+        </div>
+        
+   
+        <div class="footer">
+            <p>Created with HTML, CSS & JavaScript | &copy; 2023 Central Image Showcase</p>
+        </div>
+    </div>
+    
+    <script>
+        // Add a subtle pulsing effect to the image container
+        document.addEventListener('DOMContentLoaded', function() {
+            const imageContainer = document.querySelector('.image-container');
+            
+            setInterval(() => {
+                imageContainer.classList.toggle('pulse');
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
