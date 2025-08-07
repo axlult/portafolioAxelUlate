@@ -33,6 +33,10 @@ section {
   padding: 100px 0;
 }
 
+.lottie-container{
+  width: 50px;
+}
+
 /* GRADIENT BACKGROUND */
 .gradient-bg {
   background: linear-gradient(135deg, #f9ec32, #fbb240);
